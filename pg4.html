@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <style type="text/css">
+        #beginner{background-color: #008cba;display: inline-block;font-size: 16px;padding: 10px}
+        #advanced{background-color: #f44336;display: inline-block;font-size: 16px;padding: 10px}
+        #panel,#flip{
+            padding:5px;
+            text-align: center;
+            background-color: rgb(51, 238, 229);
+            border : solid 1px #c3c3c3;
+        }
+        #panel{
+            padding: 50px;
+            display:none;
+        }
+        </style>
+        <meta charset="utf-8">
+        <title>Executing a function on click event in jquery</title>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+       
+        <script type ="text/javascript">
+        $(document).ready(function(){
+            $("#beginner").hide();
+            $("#advanced").hide();            
+        });
+        $(document).ready(function(){
+            $(".bgbutton").click(function(e){
+                //$("#beginner").show();
+                $("#beginner").fadeIn(1000);
+                $("#advanced").hide();
+            });
+        });
+        $(document).ready(function(){
+            $(".adbutton").click(function(e){
+                $("#beginner").hide();
+                //$("#advanced").show();
+                $("#advanced").fadeIn(1000);
+            });
+        });
+        $(document).ready(function(){
+            $("flip").click(function(){
+                $("#panel").slideToggle("slow");
+            });
+        });
+        </script>
+    </head>
+    <body>
+        <center> <h1>Quinnox trainning</h1>
+            <h2>select courses</h2>
+                <table border="3px solid black" bgcolor="silver" width="justify">
+            <tr>
+                <th>beginner</th>
+                <th>advanced</th>
+            </tr>
+            <tr>
+                <td>
+                    <ul id="beginner"> 
+                   <li>core java</li>
+                  <li>javascript</li>
+                </ul>
+            </td>
+              <td>
+                    <ul id="advanced">
+                  <li>servlet</li>
+                  <li>jsp</li>
+                  <li>hibernet</li>
+              </ul>
+                </td>
+            </tr>
+        <tr>
+            <td>
+        <button class="bgbutton">beginner</button>
+            </td>
+            <td><button class="adbutton">advanced</button>
+           </td>
+        </tr>
+        
+        </table>
+        <div id="flip"> click here for early registration</div>
+        <div id="panel">send a mail to admin@trainning.com</div>
+        </center>
+    </body>
+</html>
